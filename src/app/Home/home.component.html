@@ -1,0 +1,25 @@
+<app-navbar
+[authenticate] = "authenticate"
+></app-navbar>
+<div>
+  <div class='text-sm py-7 hidden md:flex justify-end'>
+    <button class="flex text-slate-900 font-bold px-4 border rounded-full mr-14 divide-x gap-6 bg-white">
+      <div class='py-2 pl-4'>AWARD NOTICE</div>
+      <div class='py-2 pl-6'>ARCHIVE</div>
+      <div class='py-2 pl-6'> WORKFLOW CHART</div>
+      <div class='py-2 pl-6 pr-4'>MANUAL</div>
+    </button>
+  </div>
+  <div class='py-7 px-2 grid grid-cols-12 md:hidden gap-x-3 gap-y-3'>
+    <button class="text-slate-900 font-bold border rounded-full col-span-7 py-1">AWARD NOTICE</button>
+    <button class="text-slate-900 font-bold border rounded-full col-span-5 py-1">ARCHIVE</button>
+    <button class="text-slate-900 font-bold border rounded-full col-span-7 py-1">WORKFLOW CHART</button>
+    <button class="text-slate-900 font-bold border rounded-full col-span-5 py-1">MANUAL</button>
+  </div>
+</div>
+
+<app-tender-cart
+[tenderCarts]="tenderCarts"
+></app-tender-cart>
+
+<app-footer></app-footer>

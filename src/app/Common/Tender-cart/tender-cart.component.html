@@ -1,0 +1,31 @@
+<div class='grid grid-cols-12 gap-4 mx-2 lg:mx-12'>
+@for (tenderCart of tenderCarts ; track tenderCart.id){
+<div class="p-4 rounded col-span-12 md:col-span-6 lg:col-span-3 text-lg text-white" [ngClass]="tenderCart?.bg">
+  <div class='flex justify-between'>
+    <div class='flex'>
+      <div [innerHTML]="trustedSvgString"></div>
+      <div class='ml-2 text-xl'>{{tenderCart.name}}</div>
+    </div>
+    <div class='text-2xl'>0</div>
+  </div>
+  <div class="flex justify-between rounded my-2 p-2" [ngClass]="tenderCart?.rowBg">
+    <div>Head Office</div>
+    <div class='flex'>
+      <div class='text-xl'>0</div>
+      <svg class='mt-2 ml-1' xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9" fill="none">
+        <path d="M1.5 8L4.5 4.5L1.5 1" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+  <div class="flex my-1 justify-between rounded p-2" [ngClass]="tenderCart?.rowBg">
+    <div>HCMP-Cox's Bazar</div>
+    <div class='flex'>
+      <div class='text-xl'>0</div>
+      <svg class='mt-2 ml-1' xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9" fill="none">
+        <path d="M1.5 8L4.5 4.5L1.5 1" stroke="white" strokeWidth="2"/>
+      </svg>
+    </div>
+  </div>
+</div>
+}
+</div>

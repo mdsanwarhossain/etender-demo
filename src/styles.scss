@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.nav-link{
+}
+.nav-link.active{
+  color: #ff229a !important;
+}
+.pink-bg-color{
+  background-color: #ff229a;
+}
+.pink-color{
+  color: #ff229a;
+}
+.round-100px{
+  border-radius:100px;
+}
+.border-pink{
+  border: 1px #ff229a solid;
+}
+.border-green{
+  border: 1px #17a2b8 solid;
+}
+
+.border-pink:hover{
+  border: 1px #dc3545 solid;
+}
+body{
+  font-family: 'Helvetica';
+  font-weight: normal;
+}
+.sticky-top {
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+.sticky-bottom {
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.add-background{
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+.contain{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.slick-arrow{
+  display: none!important;
+}
+.width-less{
+  width: calc(100% - 385px);
+}
+.left-menu{
+  background-color: #fff1fa;
+}
+.left-menu-color{
+  background-color: white;
+}
+.left-menu-color:hover{
+  background-color: #fff1fa;
+}
+.left-menu-text{
+  color: rgb(51, 49, 49);
+}
+.left-menu-text:hover{
+  color: #ff229a;
+}
