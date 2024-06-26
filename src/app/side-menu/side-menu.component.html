@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="flex ">
+<div class="lg:w-[310px]   md:w-full">
+
+  <div class="max-w-screen-xl bg-white mx-auto  p-3 min-h-screen text-sm">
+    <div class="flex items-center  left-menu rounded">
+
+      <img
+        class="h-8 ml-4"
+        ngSrc="assets/content/public/icon_set1.png"
+        width="25"
+        height="28"
+        alt="Brac Logo"
+      />
+      <span class="ml-8 text-pink-500 font-bold"> Dashboard</span>
+
+    </div>
+    <div class="grid max-w-xl mx-auto mt-2">
+
+      <app-side-menus
+        *ngFor="let menu of leftMenu"
+        [menu]="menu"
+        [isShow]="isShow"
+        (showChange)="isShow = $event"
+      ></app-side-menus>
+    </div>
+  </div>
+
+</div>
+ <div>
+ <h1 class="text-4xl p-9 text-gray-800 font-bold">Dashboard</h1>
+  <app-tender-cart
+    [tenderCarts]="tenderCarts"
+  ></app-tender-cart>
+   <!--service need-->
+   <div>
+     <h1 class="text-4xl p-9 text-gray-800 font-bold">Tender Process</h1>
+<!--     <div>-->
+<!--       <table >-->
+<!--         <thead>-->
+<!--         <tr>-->
+<!--           <td>FEATURES </td>-->
+<!--           <td>Total Pending</td>-->
+<!--         </tr>-->
+<!--         <tr>-->
+<!--           <td>FEATURES </td>-->
+<!--           <td>Total Pending</td>-->
+<!--         </tr>-->
+<!--         </thead>-->
+<!--       </table>-->
+<!--     </div>-->
+     <!--service need-->
+   </div>
+   <div >
+     <h3 class="text-lg text-gray-800 font-bold ml-12">Featured Tender / EOI</h3>
+     <mat-progress-bar mode="determinate" class="ml-10"  color="accent" value="20"></mat-progress-bar>
+<!--     <h1 class="ml-10 text-3xl pt-4 text-gray-800 font-bold">Featured Tenders</h1>-->
+
+    <app-tender-features [tenderFeatures]="tenderFeatures"></app-tender-features>
+   </div>
+ </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+<app-navbar>
+<!--  [authenticate] = "authenticate"-->
+</app-navbar>
+<div class="p-4 m-5">
+  <div class="text-2xl font-bold">News & Events</div>
+  <hr>
+
+  @for(eachNews of allNews; track eachNews.sl){
+    <div class="bg-white m-3 ">
+    <div  class="flex mb-6">
+      <div class="text-2xl text-stone-400 ">{{ eachNews.sl }}</div>
+      <div class="text-lg text-pink-500 pl-6 hover:text-cyan-400"><a href="https://brac.net/downloads/BPGIP-Revised_Amended_Ver_5.pdf"><b>{{ eachNews.headline }}</b></a></div>
+    </div>
+    <hr>
+    </div>
+  }
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto p-4">
+  <p class="text-2xl font-bold mb-4 text-pink-500">Live Tender List</p>
+
+  <p class="bg-pink-500 text-white text-sm  mb-2">Tender Information List</p>
+
+  <div class="overflow-x-auto">
+    <h3>Tender Search</h3>
+          <div>
+    <input class="w-full" type="search" [(ngModel)]="searchtext"  id="search" placeholder="like Tender No, Method, Participation and Evaluation Type, Status...">
+          </div>
+            <table class="table min-w-full border-collapse bg-white border border-gray-300 ">
+      <thead>
+      <tr class="bg-pink-100 text-pink-500">
+        <td class="px-4 py-2 border-b-2 border-gray-300">Tender No.</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Method</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Participation and Evaluation Type</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Publish Date</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Last Submission Date</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Opening Date</td>
+        <td class="px-4 py-2 border-b-2 border-gray-300">Status</td>
+      </tr>
+      </thead>
+      <tbody>
+        @for (tender of tenders | filter:searchtext; track tender.tenderNo){
+      <tr  class="table-row text-gray-700 hover:bg-gray-100">
+        <td class="px-4 border-b border-gray-300 text-pink-500">{{ tender.tenderNo }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.method }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.type }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.publishDate }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.lastSubmissionDate }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.openingDate }}</td>
+        <td class="px-4 border-b border-gray-300">{{ tender.status }}</td>
+      </tr>
+        }
+      </tbody>
+    </table>
+    <mat-paginator [length]="100"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

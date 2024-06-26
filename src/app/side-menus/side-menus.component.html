@@ -1,0 +1,46 @@
+<div>
+  <div
+    [ngClass]="isShow === menu.id ? 'left-menu p-4 rounded' : 'left-menu-color p-4 rounded'"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+  >
+    <div
+      class="flex items-center rounded font-medium cursor-pointer list-none left-menu-text"
+      (click)="showSingleGrid(menu.id)"
+    >
+      <img
+        class="h-7"
+        [src]="isHovering || isShow === menu.id ? menu.hoverImage : menu.image"
+        width="25"
+        height="30"
+        alt="Brac Logo"
+      />
+      <span [ngClass]="isShow === menu.id ? 'ml-8 font-bold pink-color' : 'ml-8 font-bold'">
+        {{ menu.name }}
+      </span>
+      <div [ngClass]="isShow === menu.id ? 'ml-auto pink-color' : 'ml-auto'">
+        <svg
+          fill="none"
+          height="24"
+          shape-rendering="geometricPrecision"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="isShow === menu.id" class="mt-4">
+      <div
+        *ngFor="let subMenu of menu.subMenu"
+        class="left-menu-text hover:bg-red-300 py-2 pl-20 rounded"
+      >
+        {{ subMenu }}
+      </div>
+    </div>
+  </div>
+</div>

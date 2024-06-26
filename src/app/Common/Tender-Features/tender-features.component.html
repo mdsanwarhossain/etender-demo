@@ -1,0 +1,51 @@
+
+<div class="mx-2 lg:mx-12">
+  <div class="flex justify-between mb-5">
+    <div class="text-3xl font-bold pt-4">Featured Tenders</div>
+    <div class="flex">
+      <div class="text-2xl pt-4 mr-2 text-gray-500 hidden lg:block">view more...</div>
+
+      <img (click)="previous()"
+           class="mr-2 {{ leftside === 0 ? 'cursor-not-allowed' : 'cursor-pointer' }}"
+           ngSrc="assets/content/public/owl_prev.png" width="32" height="32" alt="Mail Icon">
+      <img (click)="next()"
+           class="mr-2 {{ rightside === tenderFeatures?.length ? 'cursor-not-allowed disabled' : 'cursor-pointer' }}"
+           ngSrc="assets/content/public/owl_next.png" width="32" height="32" alt="Mail Icon">
+
+    </div>
+
+  </div>
+  <hr>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+  @for(featureTender of tenderFeatures; track featureTender.id){
+    <div class="bg-white rounded-lg shadow-lg  ">
+      <div class="flex justify-end contain">
+        <img src="assets/content/public/time_badge.jpg" width="190" height="35" alt="Mail Icon" class="rounded-lg mr-0 mt-0"/>
+        <div class=" add-background text-sm font-bold">2 Days: 1 Hrs: 49 Mins</div>
+      </div>
+      <div class="px-5 font-bold lg:px-10 pb-5 text-xl pt-5 lg:pt-0">RFQ for the following Items...</div>
+      <div class="px-5 text-sm lg:px-10 grid grid-cols-12 gap-2 text-gray-400">
+        <div class="col-span-6">Ref No</div>
+        <div class="col-span-6">Opening Date</div>
+      </div>
+      <div class="px-5 lg:px-10 grid grid-cols-12 gap-2 text-md">
+        <div class="col-span-6">{{ featureTender.refNo }}</div>
+        <div class="col-span-6">{{ featureTender.openingDate }}</div>
+      </div>
+      <div class="px-5 lg:px-10 grid grid-cols-12 gap-2 text-sm text-gray-400 mt-10 lg:mt-5">
+        <div class="col-span-6">Last Submission</div>
+        <div class="col-span-6">Published Date</div>
+      </div>
+      <div class="px-5 lg:px-10 grid grid-cols-12 gap-2 text-md">
+        <div class="col-span-6">{{ featureTender.lastSubmission }}</div>
+        <div class="col-span-6">{{ featureTender.publishedDate }}</div>
+      </div>
+      <div class="text-right pr-5 my-5">
+        <a href="#" class="text-sm border border-blue-500 rounded-full px-2 text-blue-500 hover:bg-blue-400 hover:text-amber-50 mt-4 inline-block">read more...</a>
+      </div>
+    </div>
+  }
+
+  </div>
+
+</div>

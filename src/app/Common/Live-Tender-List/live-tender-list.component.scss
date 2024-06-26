@@ -1,0 +1,15 @@
+.table-row:nth-child(even) {
+  @apply bg-white;
+}
+
+.table-row:nth-child(odd) {
+  @apply bg-gray-100; /* Adjust the gray shade as needed */
+}
+table {
+  border-collapse: collapse; /* Combine adjacent table borders */
+  border: 1px solid #ddd; /* Set border style, width, and color */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Set border style, width, and color for cells */
+}

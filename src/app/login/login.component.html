@@ -1,0 +1,26 @@
+<div id="login-popup" class="fixed  inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+
+  <div class=" bg-white rounded-lg">
+
+    <div class=" relative  flex flex-col items-center mx-auto">
+      <i (click)="closeLoginPopup()" class="fa-solid fa-xmark absolute top-0 right-0 m-4"></i>
+      <img src="assets/content/public/logo-pink.png" alt="" >
+      <h2 class="text-2xl mb-4">Login to your account</h2>
+    </div>
+
+    <form class="p-20 " >
+      <div class="mb-4">
+        <label class="block text-gray-700" >Username</label>
+        <input type="text" class="border border-gray-300 p-2 rounded w-full" placeholder="Enter username">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700" >Password</label>
+        <input type="password" class="border border-gray-300 p-2 rounded w-full" placeholder="Enter password">
+      </div>
+      <div class="flex justify-between items-center">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Login</button>
+        <!--        <button type="button" (click)="closeLoginPopup()" class="text-gray-500">Cancel</button>-->
+      </div>
+    </form>
+  </div>
+</div>
